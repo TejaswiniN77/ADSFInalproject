@@ -1,0 +1,475 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | TNEB Electricity Prediction</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+
+
+<nav class="main-nav">
+    <a href="/">Home</a>
+    <a href="/prediction">Prediction</a>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/machine-learning">Machine Learning</a>
+    <a href="/about">About</a>
+
+    <span class="nav-user">
+        Hi, {{ request.session.get("username", "User") }}!
+    </span>
+
+    <form action="/logout" method="post" class="logout-form">
+        <button type="submit" class="logout-btn">Logout</button>
+    </form>
+</nav>
+
+
+
+<main class="about-content-page">
+
+    <p class="eyebrow">MCA DATA SCIENCE PROJECT</p>
+
+    <h1>About | TNEB Electricity Prediction</h1>
+
+    <p>
+        TNEB Electricity Usage and Bill Prediction is a web-based
+        machine learning project designed to estimate household
+        electricity consumption and electricity bills using
+        environmental conditions and household appliance usage data.
+        The application combines data science and web development
+        to provide a simple and accessible prediction system.
+    </p>
+
+    <!-- PROJECT OVERVIEW -->
+    <article class="card">
+        <h2>1. Project Overview</h2>
+
+        <p>
+            Electricity is an essential part of everyday life.
+            Households depend on electrical appliances such as fans,
+            refrigerators, washing machines, lights, and other
+            equipment. Electricity consumption can change according
+            to weather conditions, the number of people in a home,
+            appliance operating hours, and previous consumption.
+        </p>
+
+        <p>
+            Understanding these factors can help users become more
+            aware of their electricity usage and plan their monthly
+            expenses. However, estimating future consumption manually
+            can be difficult because several factors influence energy
+            demand.
+        </p>
+
+        <p>
+            Our project uses machine learning models to analyse
+            household and environmental information and generate
+            predictions for electricity consumption and bill amounts.
+            Users enter their details through a website and receive
+            the predicted results on a separate results page.
+        </p>
+    </article>
+
+    <!-- ABSTRACT -->
+    <article class="card">
+        <h2>2. Project Abstract</h2>
+
+        <p>
+            The main purpose of this project is to demonstrate how
+            machine learning can be applied to household electricity
+            consumption analysis. The system accepts input data such
+            as temperature, humidity, rainfall, fan usage, washing
+            machine usage, and previous-month electricity consumption.
+        </p>
+
+        <p>
+            The submitted information is processed using Python and
+            Pandas. The trained machine learning models then generate
+            an estimated electricity usage value in kilowatt-hours
+            (kWh) and an estimated bill amount in Indian rupees.
+        </p>
+
+        <p>
+            FastAPI connects the prediction logic to the web interface,
+            while HTML and CSS provide the pages through which users
+            enter information and view results. The project illustrates
+            the practical integration of data processing, machine
+            learning, and web application development.
+        </p>
+    </article>
+
+    <!-- PROBLEM STATEMENT -->
+    <article class="card">
+        <h2>3. Problem Statement</h2>
+
+        <p>
+            Household electricity consumption varies from month to
+            month. Changes in temperature, weather, appliance usage,
+            household size, and daily routines can affect the amount
+            of electricity consumed.
+        </p>
+
+        <p>
+            Without an estimation tool, users may find it difficult
+            to understand how their usage patterns could influence
+            future consumption and expenses. The objective is to
+            develop a web application that uses historical data and
+            machine learning to estimate electricity usage and bills
+            from the information supplied by the user.
+        </p>
+    </article>
+
+    <!-- OBJECTIVES -->
+    <article class="card">
+        <h2>4. Project Objectives</h2>
+
+        <p>The main objectives of the project are:</p>
+
+        <ul>
+            <li>To develop a web-based electricity prediction system.</li>
+            <li>To estimate household electricity consumption using a trained machine learning model.</li>
+            <li>To estimate electricity bills using a bill prediction model.</li>
+            <li>To examine the relationship between environmental conditions and electricity consumption.</li>
+            <li>To consider household appliance usage and previous consumption as prediction inputs.</li>
+            <li>To present prediction results through a clear and user-friendly interface.</li>
+            <li>To demonstrate the application of data science techniques to a real-world problem.</li>
+        </ul>
+    </article>
+
+    <!-- EXISTING SYSTEM -->
+    <article class="card">
+        <h2>5. Existing System</h2>
+
+        <p>
+            In a traditional electricity billing process, consumption
+            is recorded over a billing period and the bill is
+            calculated using the applicable billing rules. Users
+            generally learn their actual consumption and charges
+            after the relevant readings have been processed.
+        </p>
+
+        <p>
+            Manual estimation may not fully account for changes in
+            appliance operating hours, weather, or household habits.
+            A prediction application can provide an additional way
+            to estimate possible consumption before the next bill
+            becomes available.
+        </p>
+    </article>
+
+    <!-- PROPOSED SYSTEM -->
+    <article class="card">
+        <h2>6. Proposed System</h2>
+
+        <p>
+            The proposed system integrates a web interface with
+            trained machine learning models. Users provide the
+            required household and environmental information through
+            a prediction form. The backend receives the form data,
+            validates the values, and prepares the input for the
+            trained models.
+        </p>
+
+        <p>
+            The electricity usage model predicts consumption in kWh.
+            The bill model estimates the corresponding bill amount.
+            The application then displays both values on the results
+            page and compares predicted usage with the previous
+            month's usage.
+        </p>
+
+        <p>
+            This approach provides an easy way to explore electricity
+            consumption estimates without requiring users to run
+            machine learning code manually.
+        </p>
+    </article>
+
+    <!-- WORKING PROCESS -->
+    <article class="card">
+        <h2>7. Working Process of the Project</h2>
+
+        <p>
+            The project follows a sequence of data preparation,
+            model training, user input, prediction, and result
+            presentation.
+        </p>
+
+        <ol>
+            <li>
+                <strong>Dataset preparation:</strong>
+                Historical electricity consumption records and
+                relevant environmental and household features
+                are prepared for model training.
+            </li>
+
+            <li>
+                <strong>Data preprocessing:</strong>
+                The dataset is checked for suitable column names,
+                data types, missing values, and inconsistent records.
+            </li>
+
+            <li>
+                <strong>Model training:</strong>
+                Machine learning algorithms learn patterns from
+                the training data to predict the selected targets.
+            </li>
+
+            <li>
+                <strong>Model saving:</strong>
+                The trained models are saved as files so that the
+                web application can load and reuse them.
+            </li>
+
+            <li>
+                <strong>User input:</strong>
+                Users enter environmental details, appliance
+                usage, and previous electricity consumption.
+            </li>
+
+            <li>
+                <strong>Prediction:</strong>
+                FastAPI passes the validated information to the
+                appropriate trained models.
+            </li>
+
+            <li>
+                <strong>Result display:</strong>
+                The website presents the estimated usage, bill,
+                and comparison with previous consumption.
+            </li>
+        </ol>
+    </article>
+
+    <!-- INPUT FEATURES -->
+    <article class="card">
+        <h2>8. Input Parameters</h2>
+
+        <p>
+            The prediction form uses the following information
+            to generate an estimate:
+        </p>
+
+        <ul>
+            <li>
+                <strong>Temperature:</strong>
+                The environmental temperature in degrees Celsius.
+                Temperature may influence cooling appliance usage.
+            </li>
+
+            <li>
+                <strong>Humidity:</strong>
+                The relative humidity percentage, which describes
+                the amount of moisture in the air.
+            </li>
+
+            <li>
+                <strong>Rainfall:</strong>
+                The recorded rainfall in millimetres, representing
+                one of the environmental features in the model.
+            </li>
+
+            <li>
+                <strong>Fan Usage:</strong>
+                The number of hours the fan operates per day,
+                according to the form's input definition.
+            </li>
+
+            <li>
+                <strong>Washing Machine Usage:</strong>
+                The appliance operating hours specified by the
+                user and defined by the dataset.
+            </li>
+
+            <li>
+                <strong>Previous Month Usage:</strong>
+                The previous month's electricity consumption
+                measured in kilowatt-hours.
+            </li>
+        </ul>
+
+        <p>
+            The model can only use features that match its
+            training configuration. Additional factors may
+            influence actual household electricity consumption
+            but are not necessarily represented in the current form.
+        </p>
+    </article>
+
+    <!-- TECHNOLOGIES -->
+    <article class="card">
+        <h2>9. Technologies Used</h2>
+
+        <ul>
+            <li>
+                <strong>Python:</strong>
+                Used to implement the backend and prediction logic.
+            </li>
+
+            <li>
+                <strong>FastAPI:</strong>
+                Handles HTTP requests, form submissions, and
+                communication between the website and the models.
+            </li>
+
+            <li>
+                <strong>Pandas:</strong>
+                Organises input information into data structures
+                required by the prediction pipeline.
+            </li>
+
+            <li>
+                <strong>Scikit-learn:</strong>
+                Provides machine learning algorithms and tools
+                for model training and prediction.
+            </li>
+
+            <li>
+                <strong>Joblib:</strong>
+                Saves trained models and loads them into the
+                application when required.
+            </li>
+
+            <li>
+                <strong>HTML:</strong>
+                Defines the structure and content of each web page.
+            </li>
+
+            <li>
+                <strong>CSS:</strong>
+                Provides the website's colours, layout, typography,
+                visual effects, and responsive design.
+            </li>
+
+            <li>
+                <strong>Jinja2 Templates:</strong>
+                Displays dynamic content, including prediction
+                results and validation messages.
+            </li>
+
+            <li>
+                <strong>Uvicorn:</strong>
+                Runs the FastAPI application server.
+            </li>
+        </ul>
+    </article>
+
+    <!-- FEATURES -->
+    <article class="card">
+        <h2>10. Main Features</h2>
+
+        <ul>
+            <li>A home page describing the purpose of the application.</li>
+            <li>A prediction form for entering household and environmental data.</li>
+            <li>Machine-learning-based electricity usage estimation.</li>
+            <li>Estimated bill generation using a trained bill model.</li>
+            <li>Input validation to reduce invalid values.</li>
+            <li>A results page displaying the prediction output.</li>
+            <li>A comparison between predicted usage and previous usage.</li>
+            <li>An About page explaining the project and its technologies.</li>
+            <li>A responsive interface for different screen sizes.</li>
+        </ul>
+    </article>
+
+    <!-- BENEFITS -->
+    <article class="card">
+        <h2>11. Benefits and Applications</h2>
+
+        <p>
+            This project demonstrates how data-driven techniques
+            can support energy awareness. The predicted values may
+            help users understand possible consumption patterns
+            and plan their household expenses.
+        </p>
+
+        <p>
+            The same general approach can be explored in smart
+            home applications, household energy monitoring,
+            electricity consumption research, and energy analytics.
+            These applications would require suitable data,
+            appropriate validation, and reliable prediction models.
+        </p>
+    </article>
+
+    <!-- FUTURE ENHANCEMENTS -->
+    <article class="card">
+        <h2>12. Future Enhancements</h2>
+
+        <ul>
+            <li>Expand the dataset with more representative household records.</li>
+            <li>Evaluate model accuracy using suitable validation methods.</li>
+            <li>Add charts to visualise monthly consumption trends.</li>
+            <li>Support more household appliances and relevant input features.</li>
+            <li>Introduce user accounts and saved prediction history.</li>
+            <li>Integrate smart meter data where available.</li>
+            <li>Compare different machine learning algorithms.</li>
+            <li>Use verified, current tariff rules to improve bill estimation.</li>
+        </ul>
+    </article>
+
+    <!-- LIMITATIONS -->
+    <article class="card">
+        <h2>13. Limitations</h2>
+
+        <p>
+            Prediction quality depends on the accuracy, size, and
+            representativeness of the training dataset. A small
+            dataset may not capture the full variety of household
+            consumption patterns, and the model may not generalise
+            well to every household.
+        </p>
+
+        <p>
+            The estimated bill is a model-generated prediction,
+            not an official TNEB calculation. Actual electricity
+            charges can depend on the applicable tariff, billing
+            period, consumption category, subsidies, and other
+            billing rules.
+        </p>
+    </article>
+
+    <!-- CONCLUSION -->
+    <article class="card">
+        <h2>14. Conclusion</h2>
+
+        <p>
+            The TNEB Electricity Usage and Bill Prediction project
+            demonstrates the integration of machine learning and
+            web development to address a practical household
+            energy estimation problem. It combines data preparation,
+            trained prediction models, backend request handling,
+            and a user-friendly interface.
+        </p>
+
+        <p>
+            By allowing users to submit household and environmental
+            information and view estimated results, the application
+            provides a foundation for exploring electricity usage
+            patterns. Further improvements to the dataset, model
+            evaluation, and tariff calculations can help make the
+            system more reliable and useful.
+        </p>
+    </article>
+
+    <p class="note">
+        Academic project demonstration. All predictions are estimates
+        generated using the available trained models and dataset.
+    </p>
+
+    <a href="/" class="button">← Back to Home</a>
+    <a href="/prediction" class="button">Try Prediction →</a>
+
+</main>
+
+<footer>
+    TNEB Electricity Usage and Bill Prediction |
+    MCA Data Science Project
+</footer>
+
+</body>
+</html>
+
